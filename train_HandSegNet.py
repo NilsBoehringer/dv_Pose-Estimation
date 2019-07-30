@@ -1,20 +1,20 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
 import torch
+import numpy as np
 import torch.nn as nn
-from torch.utils.data import DataLoader
 import torch.nn.functional as F
-from nets.Unet import unet
-from Hands_Dataset import Hands, Hands_test
+import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
+from PIL import Image
+from torch.utils.data import DataLoader
+from Hands_Dataset import Hands, Hands_test
+
+from nets.Unet import unet
 
 
 batch_size = 32
 num_epochs = 50
 print_freq = 100
 learning_rate = 0.001
-
 
 train_transformation = transforms.Compose([
     transforms.ToTensor(),

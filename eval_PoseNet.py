@@ -1,14 +1,14 @@
-from PIL import Image, ImageDraw
-from nets.PoseNet import poseNet2D
 import numpy as np
+from PIL import Image
 from torchvision import transforms
 from matplotlib import pyplot as plt
+
+from nets.Unet import unet
 
 net = unet(pretrained=True, checkpoint_path="checkpoint_PoseNet.pth.tar" ,n_channels=3,n_classes=21)
 
 transform = transforms.ToTensor()
 img = Image.open("/home/gcp/mnt/data/training__/color/00000.png")
-img_draw = ImageDraw.Draw(img)
 img_tensor = transform(img)
 img_tensor.unsqueeze_(0)
 print(np.shape(img_tensor))

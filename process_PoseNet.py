@@ -1,16 +1,14 @@
-import os, pickle
+import os
+
+import pickle
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from PIL import Image, ImageDraw
-from tqdm import tqdm
-from torch.autograd import Variable
-from scipy.ndimage.filters import gaussian_filter
 import torchvision.transforms as transforms
+from PIL import Image
+from tqdm import tqdm
+from scipy.ndimage.filters import gaussian_filter
 
 
 crop_padding = 15 #padding on each side in pixels
-data_folder = "../mnt/data/evaluation___"
 
 resize_to_tensor = transforms.Compose([
     transforms.Resize((128,128)),

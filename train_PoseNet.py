@@ -1,17 +1,18 @@
 import time
-import torch
-import torchvision
-from PIL import Image
-import numpy as np
 import os, os.path
-import pickle
-from torch.utils.data import DataLoader, Dataset
-from nets.PoseNet import poseNet2D
-from tqdm import tqdm
-from torch.autograd import Variable
-import matplotlib.pyplot as plt
-from nets.Unet import unet
 
+import torch
+import pickle
+import torchvision
+import numpy as np
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+from PIL import Image
+from nets.Unet import unet
+from torch.autograd import Variable
+from torch.utils.data import DataLoader, Dataset
+
+from nets.Unet import unet
 
 batch_size = 16
 n_epochs = 60
@@ -70,7 +71,6 @@ eval_loss = torch.nn.L1Loss()
 print("Starting Training")
 for epoch in range(n_epochs):
     running_loss = 0.0
-    start_time = time.time()
     total_train_loss = 0
 
     for i, (image, annotation) in enumerate(train_loader, 0):

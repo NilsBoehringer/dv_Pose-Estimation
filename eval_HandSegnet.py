@@ -1,17 +1,16 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
 import torch
+import numpy as np
 import torch.nn as nn
+import matplotlib.pyplot as plt
+import torchvision.transforms as transforms
+from PIL import Image
 from torch.utils.data import DataLoader
 
 from nets.Unet import unet
 from Hands_Dataset import Hands, Hands_test
-import torchvision.transforms as transforms
 
 
 batch_size = 1
-
 
 train_transformation = transforms.Compose([
     transforms.ToTensor(),

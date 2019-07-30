@@ -1,15 +1,13 @@
+import os
 from __future__ import print_function, unicode_literals
+
 import PIL
 import pickle
-import os
-import numpy as np
 import scipy.misc
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.patches as patches
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from mpl_toolkits.mplot3d import Axes3D
 
 
 sets = ['training', 'evaluation']
