@@ -26,7 +26,7 @@ for set in sets:
     print("Started preparing", set, "dataset")
     data_path = os.path.join('data', set + '_PoseNet')
     # Load annotations of training set
-    with open(os.path.join('data', set, 'anno_evaluation.pickle'), 'rb') as fi:
+    with open(os.path.join('data', set, 'anno_' + set + '.pickle'), 'rb') as fi:
         annotations_in = pickle.load(fi)
 
     if not os.path.exists(data_path):
