@@ -88,7 +88,7 @@ for epoch in range(n_epochs):
 
 
         if (i + 1) % print_freq == 0:
-            torch.save(model.state_dict(),"PoseNet_checkpoint.pth.tar")
+            torch.save(model.state_dict(),"checkpoint_PoseNet.pth.tar")
             print('Epoch [{}/{}], Loss: {:.4f}'
                 .format(epoch + 1, n_epochs,  loss_size.item()))
 
